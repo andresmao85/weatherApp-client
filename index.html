@@ -4,496 +4,537 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
     <title>My Weather App</title>
-    <!-- <script src="script.js" defer></script> -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="script.ts"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="blurred">
-    <br />
-    <br />
-    <div class="city">
-      <span data-current-city>City</span>,&nbsp;<span data-current-country
-        >Country</span
-      >
+  <body>
+    <div class="cube-container">
+      <div class="cube">
+        <div class="side front">
+          <img src="./img/113d.png" alt="" />
+        </div>
+        <div class="side left">
+          <img src="./img/113n.png" alt="" />
+        </div>
+        <div class="side right">
+          <img src="./img/119.png" alt="" />
+        </div>
+        <div class="side back">
+          <img src="./img/122.png" alt="" />
+        </div>
+        <div class="side top">
+          <img src="./img/266.png" alt="" />
+        </div>
+        <div class="side bottom">
+          <img src="./img/389.png" alt="" />
+        </div>
+      </div>
     </div>
+    <div class="location-select">
+      <label for="location">Location:&nbsp;</label>
+      <select id="location">
+        <option value="" selected disabled>Select an option</option>
+        <option value="current">Your location (only for desktop)</option>
+        <option value="bogota">Bogotá, Colombia</option>
+        <option value="dubai">Dubai, UAE</option>
+        <option value="frankfurt">Frankfurt, Germany</option>
+        <option value="hongkong">Hong Kong, China</option>
+        <option value="london">London, UK</option>
+        <option value="losangeles">Los Angeles, USA</option>
+        <option value="newyork">New York City, USA</option>
+        <option value="paris">Paris, France</option>
+        <option value="sanfrancisco">San Francisco, USA</option>
+        <option value="saopaulo">São Paulo, Brazil</option>
+        <option value="shanghai">Shanghai, China</option>
+        <option value="singapore">Singapore, Singapore</option>
+        <option value="sydney">Sydney, Australia</option>
+        <option value="tokyo">Tokyo, Japan</option>
+      </select>
+    </div>
+    <div id="app" class="blurred">
+      <div class="city">
+        <span data-current-city>City</span>,&nbsp;<span data-current-country
+          >Country</span
+        >
+      </div>
 
-    <br />
-    <header class="header">
-      <div class="header-left">
-        <img
-          class="weather-icon large"
-          data-current-icon
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="header-left-details">
-          <div class="header-current-temp">
-            <span data-current-temp>00</span>&deg;
-          </div>
-          <div class="header-current-description" data-current-description>
-            Sunny
-          </div>
-        </div>
-      </div>
-      <div class="header-right">
-        <div class="info-group">
-          <div class="label">High</div>
-          <div><span data-current-high>00</span>&deg;</div>
-        </div>
-        <div class="info-group">
-          <div class="label">FL High</div>
-          <div><span data-current-fl-high>00</span>&deg;</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Wind</div>
-          <div>
-            <span data-current-wind>00</span>
-            <span class="value-sub-info">kph</span>
+      <br />
+      <header class="header">
+        <div class="header-left">
+          <img
+            class="weather-icon large"
+            data-current-icon
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="header-left-details">
+            <div class="header-current-temp">
+              <span data-current-temp>00</span>&deg;
+            </div>
+            <div class="header-current-description" data-current-description>
+              Sunny
+            </div>
           </div>
         </div>
-        <div class="info-group">
-          <div class="label">LOW</div>
-          <div><span data-current-low>00</span>&deg;</div>
-        </div>
-        <div class="info-group">
-          <div class="label">FL Low</div>
-          <div><span data-current-fl-low>--</span>-</div>
-        </div>
-        <div class="info-group">
-          <div class="label">Precip</div>
-          <div><span data-current-precip>00</span>%</div>
-        </div>
-      </div>
-    </header>
-    <section class="day-section" data-day-section>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Monday</div>
-        <div>00&deg;</div>
-      </div>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Tuesday</div>
-        <div>00&deg;</div>
-      </div>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Wednesday</div>
-        <div>00&deg;</div>
-      </div>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Thursday</div>
-        <div>00&deg;</div>
-      </div>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Friday</div>
-        <div>00&deg;</div>
-      </div>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Saturday</div>
-        <div>00&deg;</div>
-      </div>
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date">Sunday</div>
-        <div>00&deg;</div>
-      </div>
-    </section>
-    <table class="hour-section">
-      <tbody data-hour-section>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>6AM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>7AM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>8AM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>9AM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>10AM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>11AM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>12PM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-        <tr class="hour-row">
-          <td>
-            <div class="info-group">
-              <div class="label">Sunday</div>
-              <div>1PM</div>
-            </div>
-          </td>
-          <td>
-            <img
-              class="weather-icon"
-              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-            />
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">FL TEMP</div>
-              <div>00&deg;</div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">WIND</div>
-              <div>00<span class="value-sub-info">kph</span></div>
-            </div>
-          </td>
-          <td>
-            <div class="info-group">
-              <div class="label">PRECIP</div>
-              <div>00%</div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <template id="day-card-template">
-      <div class="day-card">
-        <img
-          class="weather-icon"
-          data-icon
-          src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
-        />
-        <div class="day-card-date" data-date>Monday</div>
-        <div><span data-temp>23</span>&deg;</div>
-      </div>
-    </template>
-    <template id="hour-row-template">
-      <tr class="hour-row">
-        <td>
+        <div class="header-right">
           <div class="info-group">
-            <div class="label" data-day>Sunday</div>
-            <div data-time>6AM</div>
+            <div class="label">High</div>
+            <div><span data-current-high>00</span>&deg;</div>
           </div>
-        </td>
-        <td>
+          <div class="info-group">
+            <div class="label">FL High</div>
+            <div><span data-current-fl-high>00</span>&deg;</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Wind</div>
+            <div>
+              <span data-current-wind>00</span>
+              <span class="value-sub-info">kph</span>
+            </div>
+          </div>
+          <div class="info-group">
+            <div class="label">LOW</div>
+            <div><span data-current-low>00</span>&deg;</div>
+          </div>
+          <div class="info-group">
+            <div class="label">FL Low</div>
+            <div><span data-current-fl-low>--</span>-</div>
+          </div>
+          <div class="info-group">
+            <div class="label">Precip</div>
+            <div><span data-current-precip>00</span>%</div>
+          </div>
+        </div>
+      </header>
+      <section class="day-section" data-day-section>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Monday</div>
+          <div>00&deg;</div>
+        </div>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Tuesday</div>
+          <div>00&deg;</div>
+        </div>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Wednesday</div>
+          <div>00&deg;</div>
+        </div>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Thursday</div>
+          <div>00&deg;</div>
+        </div>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Friday</div>
+          <div>00&deg;</div>
+        </div>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Saturday</div>
+          <div>00&deg;</div>
+        </div>
+        <div class="day-card">
+          <img
+            class="weather-icon"
+            src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+          />
+          <div class="day-card-date">Sunday</div>
+          <div>00&deg;</div>
+        </div>
+      </section>
+      <table class="hour-section">
+        <tbody data-hour-section>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>6AM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>7AM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>8AM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>9AM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>10AM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>11AM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>12PM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="hour-row">
+            <td>
+              <div class="info-group">
+                <div class="label">Sunday</div>
+                <div>1PM</div>
+              </div>
+            </td>
+            <td>
+              <img
+                class="weather-icon"
+                src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">FL TEMP</div>
+                <div>00&deg;</div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">WIND</div>
+                <div>00<span class="value-sub-info">kph</span></div>
+              </div>
+            </td>
+            <td>
+              <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>00%</div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <template id="day-card-template">
+        <div class="day-card">
           <img
             class="weather-icon"
             data-icon
             src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
           />
-        </td>
-        <td>
-          <div class="info-group">
-            <div class="label">TEMP</div>
-            <div><span data-temp>00</span>&deg;</div>
-          </div>
-        </td>
-        <td>
-          <div class="info-group">
-            <div class="label">FL TEMP</div>
-            <div><span data-fl-temp>00</span>&deg;</div>
-          </div>
-        </td>
-        <td>
-          <div class="info-group">
-            <div class="label">WIND</div>
-            <div>
-              <span data-wind>00</span><span class="value-sub-info">kph</span>
+          <div class="day-card-date" data-date>Monday</div>
+          <div><span data-temp>23</span>&deg;</div>
+        </div>
+      </template>
+      <template id="hour-row-template">
+        <tr class="hour-row">
+          <td>
+            <div class="info-group">
+              <div class="label" data-day>Sunday</div>
+              <div data-time>6AM</div>
             </div>
-          </div>
-        </td>
-        <td>
-          <div class="info-group">
-            <div class="label">PRECIP</div>
-            <div><span data-precip>00</span>%</div>
-          </div>
-        </td>
-      </tr>
-    </template>
-    <br />
-    <div class="city">
-      <a href="https://www.weatherapi.com/" title="Free Weather API"
-        ><img
-          src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
-          alt="Weather data by WeatherAPI.com"
-          border="0"
-      /></a>
+          </td>
+          <td>
+            <img
+              class="weather-icon"
+              data-icon
+              src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+            />
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">TEMP</div>
+              <div><span data-temp>00</span>&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">FL TEMP</div>
+              <div><span data-fl-temp>00</span>&deg;</div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">WIND</div>
+              <div>
+                <span data-wind>00</span><span class="value-sub-info">kph</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="info-group">
+              <div class="label">PRECIP</div>
+              <div><span data-precip>00</span>%</div>
+            </div>
+          </td>
+        </tr>
+      </template>
+      <br />
+      <div class="city">
+        <a href="https://www.weatherapi.com/" title="Free Weather API"
+          ><img
+            src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
+            alt="Weather data by WeatherAPI.com"
+            border="0"
+        /></a>
+      </div>
     </div>
   </body>
 </html>
