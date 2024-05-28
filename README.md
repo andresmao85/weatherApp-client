@@ -8,7 +8,6 @@ This is a full-stack weather application that fetches and displays current weath
 - Display current weather conditions, including temperature, wind speed, precipitation, and a description
 - Show hourly weather forecasts for the next 12 hours
 - Display daily weather forecasts for the next 7 days
-- Interactive 3D cube animation showcasing weather icons
 
 ## Technologies Used
 
@@ -90,13 +89,7 @@ npm start
 
 1. Select a location from the dropdown or choose "Your location" (desktop only) to fetch weather data for your current location.
 2. The app will display the current weather conditions, hourly forecasts, and daily forecasts for the selected location.
-3. Interact with the 3D cube animation by hovering over or clicking on it.
 
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
