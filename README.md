@@ -1,4 +1,4 @@
-# Weather App
+# Weather App - Client
 
 This is a full-stack weather application that fetches and displays current weather data and forecasts for various locations around the world. The application consists of a client-side React application and a server-side Node.js Express application.
 
